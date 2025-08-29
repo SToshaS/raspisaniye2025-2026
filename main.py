@@ -1,7 +1,7 @@
 import sqlite3
 from telebot import TeleBot, types
 
-bot = TeleBot("8372063843:AAFN2FcPsMz-TZ6g3Opd1jKea5XC3FmPF9w")
+bot = TeleBot(os.environ["BOT_TOKEN"])
 
 def get_raspisaniye(class_name, day):
     conn = sqlite3.connect(f'{class_name}.db')
@@ -85,4 +85,5 @@ def callbacks(call):
 
 if __name__ == '__main__':
     print("Бот запущен...")
+
     bot.polling()
