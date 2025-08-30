@@ -1,4 +1,5 @@
 import sqlite3
+import os
 from telebot import TeleBot, types
 
 bot = TeleBot(os.environ["BOT_TOKEN"])
@@ -87,3 +88,4 @@ if __name__ == '__main__':
     print("Бот запущен...")
 
     bot.polling()
+
