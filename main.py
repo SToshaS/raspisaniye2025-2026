@@ -85,7 +85,15 @@ def callbacks(call):
         )
 
 if __name__ == '__main__':
+    import time
     print("Бот запущен...")
 
-    bot.polling()
+    while True:
+        try:
+            bot.polling(none_stop=True, interval=0, timeout=20)
+        except Exception as e:
+            print(f"Ошибка polling: {e}")
+            time.sleep(5)
+
+
 
